@@ -31,6 +31,3 @@
 - [ ] I have documented any necessary changes in the project's documentation
 - [ ] I have added appropriate test cases (if applicable)
 - [ ] I have updated relevant comments and documentation in the codebase (if applicable)
-
-<!-- Feel free to add or modify sections as per your project's needs -->
-
