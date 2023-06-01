@@ -53,7 +53,7 @@ func main() {
 		case 2:
 			(interpreter).Two()
 		default:
-			fmt.Println("No function found for the given integer")
+			fmt.Println("No function found for the given word count.\n ")
 		}
 
 	}
