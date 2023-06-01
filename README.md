@@ -43,4 +43,4 @@ The more simpler method for any supported platform, these can be found in the 'e
 1. **Type `exit`**
 
 ### Thank you message.
-It has been an adventure, if you need help; feel free to ask someone; thank you.
+Thank you for using HDM. If you need any assistance, feel free to ask someone.
