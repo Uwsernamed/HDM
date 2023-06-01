@@ -27,7 +27,7 @@ The more simpler method for any supported platform, these can be found in the 'e
 3. Download the 'main.go' file from 'https://github.com/Uwsernamed/HDM/tree/main/src'
 4. Place the 'main.go' in a folder (preferably where, if a new file is created it can be easily found).
 5. Open a shell, make the path of the shell be the path of the folder storing the 'main.go'.
-6. run `go build [filename.go]` (in the case the file is called 'main.go' run `go build [main.go]`.
+6. run `go build [filename.go]` (in the case the file is called 'main.go' run `go build main.go`.
 7. take the new file generated from the command.
 
 ## How to use.
