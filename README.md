@@ -4,8 +4,9 @@ A folder ~~and file~~ hierarchy mapper ~~and manager~~.
 0. **IMPORTANT!**
 1. **Why?**
 2. **Features.**
-3. **How to use.**
-4. **Thank you message.**
+3. **How to obtain the executable.**
+4. **How to use.**
+5. **Thank you message.**
 
 ## IMPORTANT!
 This program is not officially supported for any other operating systems aside from Windows AMD64; hopefully with enough wait(, I will do it or someone else will initiate a pull-request,) it will be done.
@@ -22,4 +23,25 @@ The purpose of this app is to provide users with a convenient solution for gener
 The more simpler method for any supported platform, these can be found in the 'executables' folder in the main project.
 ### To compile the program:
 1. Go to the 'src' folder.
-2. get the main.go 
+2. Download the Go coding language from 'https://go.dev/dl/' (remember to complete the processes that entail to have 'go' (the program) accessable from any shell. 
+3. Download the 'main.go' file from 'https://github.com/Uwsernamed/HDM/tree/main/src'
+4. Place the 'main.go' in a folder (preferably where, if a new file is created it can be easily found).
+5. Open a shell, make the path of the shell be the path of the folder storing the 'main.go'.
+6. run `go build [filename.go]` (in the case the file is called 'main.go' run `go build [main.go]`.
+7. take the new file generated from the command.
+
+## How to use.
+### The ways to initialize:
+1. **Move & use:** One the simplist ways is to move the program to where ever you want the effects of the commands to take place.
+2. **From a shell (more permanent):** Another way is to store the executable in a safe folder, now add the program's path to where the shell can access them; by adding it to the systems path.
+3. **From a shell (tedious):** Open a shell and type the program's path.
+4. **Turn the program into a profile (like a shell):** Open a terminal that can add profiles, follow the steps to (do it)(, hopefully it won't be too hard).
+
+### How to take help:
+1. **Type `help`**
+
+### How to exit:
+1. **Type `exit`**
+
+### Thank you message.
+It has been an adventure, if you need help; feel free to ask someone; thank you.
