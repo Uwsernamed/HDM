@@ -1,5 +1,6 @@
 # HDM
-A folder ~~and file~~ hierarchy mapper ~~and manager~~.
+A folder hierarchy mapper.
+
 ## Table of contents:
 0. **IMPORTANT!**
 1. **Why?**
