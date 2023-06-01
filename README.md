@@ -9,8 +9,7 @@ A folder ~~and file~~ hierarchy mapper ~~and manager~~.
 5. **Thank you message.**
 
 ## IMPORTANT!
-This program is not officially supported for any other operating systems aside from Windows AMD64; hopefully with enough wait(, I will do it or someone else will initiate a pull-request,) it will be done.
-The program is also highly beta-y, more progress is planned to happen.
+This program is currently only supported for Windows AMD64. Support for other operating systems may be added in the future. Please note that HDM is still in beta and more updates are planned.
 
 ## Why?
 The purpose of this app is to provide users with a convenient solution for generating an easy-to-read file that maps out the locations of folders and their corresponding purposes. With the ever-increasing complexity of file systems, it can be challenging to keep track of the various folders and their intended uses. By utilizing this app, users can effortlessly generate a human-readable file that serves as a visual representation of the folder hierarchy and their assigned purposes. This mapping file can be easily updated and edited by the user, ensuring that it remains up-to-date and reflective of the current state of their file system. This app aims to simplify folder organization, enhance productivity, and facilitate better collaboration among users.
