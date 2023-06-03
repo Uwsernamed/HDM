@@ -1,6 +1,32 @@
 # HDM
 A folder hierarchy mapper.
 
+Example:
+  Using the executable:
+```
+HDF Manager
+version: 1.0.0
+
+HDM C:\Users\ADMIN\Desktop\HDM\executables | cd F:\Files\Documents\User\Coding
+Successfully changed directory.
+
+HDM F:\Files\Documents\User\Coding | create
+File 'F:\Files\Documents\User\Coding/Coding.HDF' created successfully.
+
+HDM F:\Files\Documents\User\Coding |
+```
+  Coding.HDF   (after easy text removal):
+```
+[Github]
+    [Uwsernamed]
+        [HDM]
+            [executables]
+            [src]
+[Go]
+    [HDM]
+[Python]
+[Rust]
+```
 ## Table of contents:
 0. **IMPORTANT!**
 1. **Why?**
