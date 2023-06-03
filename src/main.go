@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -11,7 +10,6 @@ import (
 )
 
 var dictionary string
-var dict string
 var currentDir string
 
 func main() {
@@ -29,13 +27,13 @@ func main() {
 	// Time to read the user's command then send it
 	var command string
 	scanner := bufio.NewScanner(os.Stdin)
-	for 1 == 1 {
+	for {
 		fmt.Printf("HDM %s | ", currentDir)
 		if !scanner.Scan() {
 			err = scanner.Err()
 			if err != nil {
 				fmt.Println("Failed to read input:", err)
-			} 
+			}
 			break
 		}
 		command = scanner.Text()
@@ -43,7 +41,7 @@ func main() {
 			break
 		}
 		parsedp := strings.Split(strings.TrimSpace(command), " ")
-		
+
 		interpreter := &Interpreter{
 			parsed: parsedp,
 		}
@@ -60,15 +58,13 @@ func main() {
 }
 
 type Interpreter struct {
-    parsed []string
+	parsed []string
 }
 
 func (r *Interpreter) One() {
 	switch r.parsed[0] {
 	case "help":
 		O_help()
-	case "load":
-		O_load()
 	case "create":
 		O_create()
 	default:
@@ -77,11 +73,13 @@ func (r *Interpreter) One() {
 }
 
 func (r *Interpreter) Two() {
-    switch r.parsed[0] {
-	case "select":
-		T_select(r.parsed[1])
+	switch r.parsed[0] {
 	case "cd":
-
+		T_cd(r.parsed[1])
+	case "changedirectory":
+		T_cd(r.parsed[1])
+	case "open":
+		T_open(r.parsed[1])
 	default:
 		fmt.Println("Unknown command. Type 'help' for a list of available commands.\n ")
 	}
@@ -89,34 +87,14 @@ func (r *Interpreter) Two() {
 
 func O_help() {
 	fmt.Println("Available commands:")
-	fmt.Println("- help: Display a list of available commands.")
-	fmt.Println("- load: ___")
-	fmt.Println("- create: ___")
-	fmt.Println("- exit: Exit the HDF Manager.\n ")
-	fmt.Println("- select [file-location]: selects a HDF file.")
-	fmt.Println("- cd [___]: ___\n ")
+	fmt.Println("- help:   display a list of available commands.")
+	fmt.Println("- exit:   exit the HDF Manager.")
+	fmt.Println("- create: creates a folder hierarchy map, .HDF.\n ")
+
+	fmt.Println("- cd              [full-directory]: changes the directory.")
+	fmt.Println("- changedirectory [full-directory]: changes the directory.")
+	fmt.Println("- open            [text-file-path]: displays a text file, intended for folder hierarchy maps.\n ")
 	// Add more commands and descriptions as needed
-}
-
-func O_load() {
-	if dictionary != "" {
-		file, err := os.Open(dictionary)
-		if err != nil {
-			fmt.Println("Error opening file:", err)
-			return
-		}
-		defer file.Close() // Make sure to close the file when done
-
-		// Read the file content
-		content, err := ioutil.ReadAll(file)
-		if err != nil {
-			fmt.Println("Error reading file:", err)
-			return
-		}
-		dict = string(content)
-		// Print the content
-		fmt.Println("Dictionary successfully loaded.\n ")
-	}
 }
 
 func O_create() {
@@ -137,7 +115,7 @@ func O_create() {
 
 	// Create the file
 	filename := fmt.Sprintf("%s/%s.HDF", directory, baseFolder)
-	err = ioutil.WriteFile(filename, []byte(text), 0644)
+	err = os.WriteFile(filename, []byte(text), 0644)
 	if err != nil {
 		log.Fatalf("Failed to create file: %s", err)
 	}
@@ -145,12 +123,36 @@ func O_create() {
 	fmt.Printf("File '%s' created successfully.\n\n", filename)
 }
 
-func T_select(T_arg string) {
+func T_cd(T_arg string) {
+	err := os.Chdir(T_arg)
+	if err != nil {
+		fmt.Println("Failed to change directory.\n ")
+	} else {
+		fmt.Println("Successfully changed directory.\n ")
+		currentDir = T_arg
+	}
+}
+
+func T_open(T_arg string) {
 	if hdfOpen(T_arg) == 1 {
 		dictionary = T_arg
-		fmt.Printf("selected: %s.\n \n", dictionary)
+		file, err := os.Open(dictionary)
+		if err != nil {
+			fmt.Println("Error opening file:", err)
+			return
+		}
+		defer file.Close() // Make sure to close the file when done
+
+		// Read the file content
+		content, err := os.ReadFile(file.Name())
+		if err != nil {
+			fmt.Println("Error reading file:", err)
+			return
+		}
+		// Print the content
+		fmt.Printf("%s\n\n", string(content))
 	} else {
-		fmt.Println("unable to select.\n ")
+		fmt.Println("unable to select, in order to open.\n ")
 	}
 }
 
