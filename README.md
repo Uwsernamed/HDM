@@ -15,7 +15,7 @@ File 'F:\Files\Documents\User\Coding/Coding.HDF' created successfully.
 
 HDM F:\Files\Documents\User\Coding |
 ```
-  Coding.HDF   (after easy text removal):
+  Coding.HDF (after editing):
 ```
 [Github]
     [Uwsernamed]
@@ -24,6 +24,18 @@ HDM F:\Files\Documents\User\Coding |
             [src]
 [Go]
     [HDM]
+[Python]
+[Rust]
+```
+  You can even write notes (after editing) + (optional):
+```
+[Github]
+    [Uwsernamed]
+        [HDM] a folder hierarchy mapper
+            [executables]
+            [src] source code
+[Go]
+    [HDM] only the .go file
 [Python]
 [Rust]
 ```
